@@ -33,7 +33,7 @@ const RevenueManagement = ({ searchQuery }) => {
         setIsLoading(true);
         setError(null);
 
-        const response = await fetch("http://kkts-moviebackend.onrender.com/api/booking/revenue", {
+        const response = await fetch("https://kkts-moviebackend.onrender.com/api/booking/revenue", {
           headers: {
             "Content-Type": "application/json",
           },

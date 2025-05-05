@@ -31,7 +31,7 @@ const BookedTickets = () => {
         setLoading(true);
         try {
           const response = await axios.get(
-            `http://kkts-moviebackend.onrender.com/api/booking/getAllBookingsByUserId/${user.phone}`,
+            `https://kkts-moviebackend.onrender.com/api/booking/getAllBookingsByUserId/${user.phone}`,
             {
               headers: {
                 Authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -46,7 +46,7 @@ const BookedTickets = () => {
             bookings.map(async (booking) => {
               try {
                 const ticketResponse = await axios.get(
-                  `http://kkts-moviebackend.onrender.com/api/tickets/getTicketByBookingId/${booking.bookingId}`,
+                  `https://kkts-moviebackend.onrender.com/api/tickets/getTicketByBookingId/${booking.bookingId}`,
                   {
                     headers: {
                       Authorization: `Bearer ${localStorage.getItem("authToken")}`,
@@ -96,7 +96,7 @@ const BookedTickets = () => {
 
     try {
       const response = await axios.patch(
-        `http://kkts-moviebackend.onrender.com/api/booking/cancelBooking/${bookingId}`,
+        `https://kkts-moviebackend.onrender.com/api/booking/cancelBooking/${bookingId}`,
         {},
         {
           headers: {
@@ -107,7 +107,7 @@ const BookedTickets = () => {
 
       // Làm mới danh sách bookings thay vì xóa trực tiếp
       const updatedBookings = await axios.get(
-        `http://kkts-moviebackend.onrender.com/api/booking/getAllBookingsByUserId/${user.phone}`,
+        `https://kkts-moviebackend.onrender.com/api/booking/getAllBookingsByUserId/${user.phone}`,
         {
           headers: {
             Authorization: `Bearer ${authToken}`,
@@ -120,7 +120,7 @@ const BookedTickets = () => {
         bookings.map(async (booking) => {
           try {
             const ticketResponse = await axios.get(
-              `http://kkts-moviebackend.onrender.com/api/tickets/getTicketByBookingId/${booking.bookingId}`,
+              `https://kkts-moviebackend.onrender.com/api/tickets/getTicketByBookingId/${booking.bookingId}`,
               {
                 headers: {
                   Authorization: `Bearer ${localStorage.getItem("authToken")}`,

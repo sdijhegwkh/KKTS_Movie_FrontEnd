@@ -38,7 +38,7 @@ const Register = () => {
 
     try{
       //Gửi yêu cầu đăng ký tới backend
-      const response = await fetch("http://kkts-moviebackend.onrender.com/api/auth/register", {
+      const response = await fetch("https://kkts-moviebackend.onrender.com/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json", // Đảm bảo gửi dữ liệu dưới dạng JSON

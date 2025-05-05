@@ -13,7 +13,7 @@ const TicketPriceManagement = ({ searchQuery }) => {
       try {
         setIsLoading(true);
         setError(null);
-        const response = await fetch("http://kkts-moviebackend.onrender.com/api/movies");
+        const response = await fetch("https://kkts-moviebackend.onrender.com/api/movies");
         if (!response.ok) {
           throw new Error(`HTTP error fetching movies! status: ${response.status}`);
         }
@@ -64,7 +64,7 @@ const TicketPriceManagement = ({ searchQuery }) => {
           return;
         }
 
-        const response = await fetch(`http://kkts-moviebackend.onrender.com/api/movies/${id}/price`, {
+        const response = await fetch(`https://kkts-moviebackend.onrender.com/api/movies/${id}/price`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",

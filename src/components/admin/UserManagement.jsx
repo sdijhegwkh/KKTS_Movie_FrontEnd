@@ -23,7 +23,7 @@ const UserManagement = ({ searchQuery }) => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch('http://kkts-moviebackend.onrender.com/api/users');
+        const response = await fetch('https://kkts-moviebackend.onrender.com/api/users');
         if (!response.ok) {
           throw new Error('Failed to fetch users');
         }
@@ -63,7 +63,7 @@ const UserManagement = ({ searchQuery }) => {
     if (!editingUser) return;
 
     try {
-      const response = await fetch(`http://kkts-moviebackend.onrender.com/api/users/${editingUser.id}`, {
+      const response = await fetch(`https://kkts-moviebackend.onrender.com/api/users/${editingUser.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -112,7 +112,7 @@ const UserManagement = ({ searchQuery }) => {
     if (!deleteConfirmation) return;
 
     try {
-      const response = await fetch(`http://kkts-moviebackend.onrender.com/api/users/${deleteConfirmation.id}`, {
+      const response = await fetch(`https://kkts-moviebackend.onrender.com/api/users/${deleteConfirmation.id}`, {
         method: 'DELETE',
       });
 
@@ -180,7 +180,7 @@ const UserManagement = ({ searchQuery }) => {
     }
 
     try {
-      const response = await fetch('http://kkts-moviebackend.onrender.com/api/users', {
+      const response = await fetch('https://kkts-moviebackend.onrender.com/api/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
