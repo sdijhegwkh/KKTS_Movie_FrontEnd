@@ -128,7 +128,7 @@ const Theaters = () => {
           randomMovies.map(async (movie) => {
             try {
               const priceResponse = await fetch(
-                `http://localhost:5000/api/movies/${movie.id}/price`
+                `http://kkts-moviebackend.onrender.com/api/movies/${movie.id}/price`
               );
               const priceData = await priceResponse.json();
               return {
@@ -223,7 +223,7 @@ const Theaters = () => {
         }).toString();
 
         const responseSeats = await fetch(
-          `http://localhost:5000/api/booking/getBookingSeats?${query}`,
+          `http://kkts-moviebackend.onrender.com/api/booking/getBookingSeats?${query}`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -332,7 +332,7 @@ const Theaters = () => {
 
       // Gửi booking
       const bookingRes = await fetch(
-        "http://localhost:5000/api/booking/create",
+        "http://kkts-moviebackend.onrender.com/api/booking/create",
         {
           method: "POST",
           headers: {
@@ -363,7 +363,7 @@ const Theaters = () => {
           status: "upcoming",
         };
 
-        return fetch("http://localhost:5000/api/tickets/create", {
+        return fetch("http://kkts-moviebackend.onrender.com/api/tickets/create", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

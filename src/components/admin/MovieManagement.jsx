@@ -25,7 +25,8 @@ const MovieManagement = ({ searchQuery }) => {
     const fetchMovies = async () => {
       setLoading(true);
       try {
-        const response = await fetch('http://localhost:5000/api/movies');
+        const response = await fetch('http://kkts-moviebackend.onrender.com/api/movies');
+    
         if (!response.ok) {
           throw new Error('Failed to fetch movies');
         }
@@ -77,7 +78,7 @@ const MovieManagement = ({ searchQuery }) => {
   const handleDeleteMovie = async (id) => {
     if (window.confirm("Bạn có chắc chắn muốn xóa phim này?")) {
       try {
-        const response = await fetch(`http://localhost:5000/api/movies/${id}`, {
+        const response = await fetch(`http://kkts-moviebackend.onrender.com/api/movies/${id}`, {
           method: "DELETE",
         });
         if (!response.ok) {
@@ -108,7 +109,7 @@ const MovieManagement = ({ searchQuery }) => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/movies/${editingMovie.id}`,
+        `http://kkts-moviebackend.onrender.com/api/movies/${editingMovie.id}`,
         {
           method: "PUT",
           headers: {
@@ -226,7 +227,7 @@ const MovieManagement = ({ searchQuery }) => {
       const movie_id = generateRandomMovieId();
 
       try {
-        const response = await fetch("http://localhost:5000/api/movies", {
+        const response = await fetch("http://kkts-moviebackend.onrender.com/api/movies", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

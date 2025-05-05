@@ -120,7 +120,7 @@ const Booking = () => {
   
         // Fetch ticket price from your backend
         const priceResponse = await fetch(
-          `http://localhost:5000/api/movies/${id}/price`
+          `http://kkts-moviebackend.onrender.com/api/movies/${id}/price`
         );
         const priceData = await priceResponse.json();
         setTicketPrice(priceData.ticket_price || 90000); // Fallback to 90000 if not found
@@ -193,7 +193,7 @@ const Booking = () => {
         }).toString();
 
         const responseSeats = await fetch(
-          `http://localhost:5000/api/booking/getBookingSeats?${query}`,
+          `http://kkts-moviebackend.onrender.com/api/booking/getBookingSeats?${query}`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -302,7 +302,7 @@ const Booking = () => {
 
       // Gửi booking
       const bookingRes = await fetch(
-        "http://localhost:5000/api/booking/create",
+        "http://kkts-moviebackend.onrender.com/api/booking/create",
         {
           method: "POST",
           headers: {
@@ -333,7 +333,7 @@ const Booking = () => {
           status: "upcoming",
         };
 
-        return fetch("http://localhost:5000/api/tickets/create", {
+        return fetch("http://kkts-moviebackend.onrender.com/api/tickets/create", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -19,7 +19,7 @@ const AdminOverview = ({ searchQuery }) => {
         setIsLoading(true);
 
         // Lấy tổng số phim
-        const moviesResponse = await fetch("http://localhost:5000/api/movies/stats");
+        const moviesResponse = await fetch("http://kkts-moviebackend.onrender.com/api/movies/stats");
         if (!moviesResponse.ok) {
           throw new Error(`HTTP error fetching movies! status: ${moviesResponse.status}`);
         }
@@ -27,7 +27,7 @@ const AdminOverview = ({ searchQuery }) => {
         console.log("Movies API response:", moviesData);
 
         // Lấy tổng số vé
-        const ticketsResponse = await fetch("http://localhost:5000/api/tickets/stats");
+        const ticketsResponse = await fetch("http://kkts-moviebackend.onrender.com/api/tickets/stats");
         if (!ticketsResponse.ok) {
           throw new Error(`HTTP error fetching tickets! status: ${ticketsResponse.status}`);
         }
@@ -35,7 +35,7 @@ const AdminOverview = ({ searchQuery }) => {
         console.log("Tickets API response:", ticketsData);
 
         // Lấy tổng số người dùng
-        const usersResponse = await fetch("http://localhost:5000/api/users/stats");
+        const usersResponse = await fetch("http://kkts-moviebackend.onrender.com/api/users/stats");
         if (!usersResponse.ok) {
           throw new Error(`HTTP error fetching users! status: ${usersResponse.status}`);
         }
@@ -43,7 +43,7 @@ const AdminOverview = ({ searchQuery }) => {
         console.log("Users API response:", usersData);
 
         // Lấy danh sách top phim
-        const topMoviesResponse = await fetch("http://localhost:5000/api/movies/top");
+        const topMoviesResponse = await fetch("http://kkts-moviebackend.onrender.com/api/movies/top");
         if (!topMoviesResponse.ok) {
           throw new Error(`HTTP error fetching top movies! status: ${topMoviesResponse.status}`);
         }

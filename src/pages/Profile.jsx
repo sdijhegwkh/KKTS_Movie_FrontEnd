@@ -98,7 +98,7 @@ const Profile = () => {
       console.log("Update data:", updateData); // Debug
       // Gửi yêu cầu tới backend
       const response = await axios.put(
-        "http://localhost:5000/api/auth/update",
+        "http://kkts-moviebackend.onrender.com/api/auth/update",
         updateData,
         {
           headers: {
